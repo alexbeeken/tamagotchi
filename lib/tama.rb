@@ -2,14 +2,15 @@ class Tama
 
 # INSTANCE METHODS
 
-# ClASS METHODS
-
   define_method(:initialize) do |name|
     @name = name
     @food = 10
     @sleep = 10
     @activity = 10
+    @is_alive = true
   end
+
+  #CHECK METHODS
 
   define_method(:name) do
     @name
@@ -27,15 +28,20 @@ class Tama
     @activity
   end
 
+  define_method(:is_alive?) do
+    @is_alive
+  end
+
+  #ACTION METHODS
+
   define_method(:time_passes) do
     @food.-(1)
   end
 
-  define_method(:is_alive?) do
+  define_method(:kill) do
     if @food <= (0)
-      false
-    else
-      true
-    end
+      @is_alive = false
   end
+
+
 end
