@@ -1,7 +1,5 @@
 class Tama
 
-# INSTANCE METHODS
-
   define_method(:initialize) do |name|
     @name = name
     @food = 10
@@ -38,10 +36,35 @@ class Tama
     @food.-(1)
   end
 
-  define_method(:kill) do
+  define_method(:kill_if) do
     if @food <= (0)
       @is_alive = false
   end
 
+  define_method(:set_food_level) do |amount|
+    @food.+(amount)
+  end
 
+  define_method(:set_sleep_level) do |amount|
+    @sleep.+(amount)
+  end
+
+  define_method(:set_activity_level) do |amount|
+    @activity.+(amount)
+  end
+
+  #CLASS METHODS
+
+
+@@current_tamagotchi = Tama.new("Tamagotchi")
+
+
+  define_singleton_method(:restart) do |name|
+    @@current_tamagotchi = Tama.new(name)
+  end
+
+  define_singleton_method(:get_current) do
+    @@current_tamagotchi
+  end
+end
 end
