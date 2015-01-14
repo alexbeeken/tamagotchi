@@ -39,6 +39,7 @@ class Tama
   define_method(:kill_if) do
     if @food <= (0)
       @is_alive = false
+    end
   end
 
   define_method(:set_food_level) do |amount|
@@ -46,25 +47,11 @@ class Tama
   end
 
   define_method(:set_sleep_level) do |amount|
-    @sleep.+(amount)
+   @sleep.+(amount)
   end
 
   define_method(:set_activity_level) do |amount|
     @activity.+(amount)
   end
 
-  #CLASS METHODS
-
-
-@@current_tamagotchi = Tama.new("Tamagotchi")
-
-
-  define_singleton_method(:restart) do |name|
-    @@current_tamagotchi = Tama.new(name)
-  end
-
-  define_singleton_method(:get_current) do
-    @@current_tamagotchi
-  end
-end
 end

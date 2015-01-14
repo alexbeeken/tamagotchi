@@ -1,0 +1,35 @@
+<<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+
+  <h1> <%= @tama.name() %> </h1>
+
+  <h3>Food level: <%= @tama.food_level() %> </br>
+    Sleep level: <%= @tama.sleep_level() %> </br>
+    Activity level: <%= @tama.activity_level() %> </br>
+    Alive? <%= @tama.is_alive? %> </br>
+  </h3>
+
+
+
+  <form action="/feed" method="post">
+    <button type="submit">Feed Me!</button>
+  </form>
+  <form action="/sleep" method="post">
+    <button type="submit">Nap Time!</button>
+  </form>
+  <form action="/play" method="post">
+    <button type="submit">Play Catch!</button>
+  </form>
+
+
+  <form action="/start" method="post">
+    <input type="text" placeholder="name" name="pet_name">
+    <button type="submit">New Tamagotchi</button>
+  </form>
+
+
+  </body>
+</html>
